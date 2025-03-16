@@ -1,0 +1,287 @@
+/* General Container Styling */
+.video-chat-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, #f3f4f6, #eef2f7);
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+/* Header */
+.header {
+    background: #2c3e50;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Auctioneer Stream */
+.auctioneer-container {
+    flex: 4;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    margin: 20px;
+}
+
+.auctioneer-player {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16/9;
+    background-color: black;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.stream-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+.stream-label1 {
+    position: absolute;
+    bottom: 30px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.5rem;
+    z-index: 100;
+}
+
+.stream-label2 {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.5rem;
+    z-index: 100;
+}
+
+/* Local Stream */
+.local-container {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    width: 220px;
+    height: 120px; /* Aspect ratio 16:9 */
+    background: black;
+    border-radius: 10%;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border: 2px solid white;
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+    width: 15px;
+    height: 15px;
+    background: green;
+    border-radius: 50%;
+    border: 2px solid white;
+    z-index: 100;
+}
+
+/* Remote Users Carousel */
+.remote-users-container {
+    position: absolute;  /* Position it on the right */
+    top: 200px;          /* Space from the top */
+    right: 10px;         /* Align to the right */
+    display: flex;
+    flex-direction: column;  /* Change to vertical stacking */
+    align-items: center;
+    gap: 15px;          /* Gap between remote user boxes */
+    margin: 10px;
+    /* overflow-y: auto;   Enable vertical scrolling if necessary */
+}
+
+.remote-users-carousel {
+    overflow-y: auto;
+    width: 200px;       /* Width of the carousel */
+    max-height: 50vh;      /* Height of the carousel */
+    display: flex;
+    flex-direction: column;  /* Stack items vertically */
+    justify-content: center;
+    gap: 10px;
+    /* padding: 10px; */
+    background: #f9f9f9;
+    border-radius: 10px; /* Optional: Add rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add shadow */
+    padding: 10px;     /* Add padding for spacing */
+}
+
+.video-box {
+    position: relative;
+    width: 100vw;  /* Increased width */
+    height: 70vh; /* Increased height */
+    background-color: #b16a6a;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+.video-box-chat {
+    position: relative;
+    width: 30vw;  /* Increased width */
+    height: 70vh; /* Increased height */
+    background-color: #00000000;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-box-1 {
+    position: relative;
+    width: 250px;  /* Increased width */
+    height: 140px; /* Increased height */
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-box-2 {
+    position: relative;
+    width: 200px;  /* Increased width */
+    height: 100px; /* Increased height */
+    background-color: #ccc;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.video-box:hover {
+    transform: scale(1.05);
+}
+
+.video-box-1:hover {
+    transform: scale(1.05);
+}
+
+/* Call Controls */
+.controls {
+    display: flex;
+    justify-content: right;
+    gap: 20px;
+    padding: 15px;
+    background-color: #50565d;
+    border-top: 2px solid #ddd;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.control-button {
+    padding: 10px 20px;
+    border: none;
+    background: #2980b9;
+    color: white;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.control-button:hover {
+    background: #3498db;
+}
+
+.end-call {
+    background: #e74c3c;
+}
+
+.end-call:hover {
+    background: #c0392b;
+}
+
+
+.chat-container {
+    max-width: 400px;
+    height: 100%;
+    margin: auto;
+}
+
+.chat-messages {
+    font-size: 0.9rem; /* Slightly smaller font for compact display */
+    line-height: 1.4;  /* Improved line height for readability */
+}
+
+.chat-input input {
+    font-size: 0.9rem;
+}
+
+.chat-input button {
+    font-size: 0.9rem;
+}
+
+/* Chat Bubble Styling */
+.message-bubble {
+    border-radius: 15px;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+/* Chat Container */
+.chat-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsiveness */
+@media (max-width: 576px) {
+    .chat-container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+}
+
+/* Input Field Shadow */
+.chat-input input {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+
+.controls button {
+    min-width: 150px; /* Ensure buttons have consistent size */
+}
+
+.controls .btn i {
+    font-size: 1.5rem; /* Adjust icon size for consistency */
+}
+
+.popup-menu {
+    position: absolute;
+    right: 10px;
+    bottom: 12%;
+    background-color: #f8f9fa; /* Light gray background */
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    width: 200px; /* Adjust width as needed */
+}
+
+.popup-menu button {
+    width: 100%; /* Make buttons stretch full width */
+}
