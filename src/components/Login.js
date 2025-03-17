@@ -11,8 +11,9 @@ export default function Login() {
     const [otpSent, setOtpSent] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const host = 'http://localhost:8080';
+    // const host = 'http://localhost:8080';
     // const host = 'https://73ad-103-199-129-204.ngrok-free.app';
+    const host = 'https://live-hammer-backend.vercel.app/';
 
     const handleGenerateOtp = async () => {
         if (!email) {

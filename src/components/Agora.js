@@ -18,7 +18,8 @@ export default function Agora() {
 
 
     const generateAgoraAPI = async() => {
-        const host = 'http://localhost:8080';
+        // const host = 'http://localhost:8080';
+        const host = 'https://live-hammer-backend.vercel.app';
         const response = await fetch(`${host}/video/generateToken`);
         const data = await response.json();
 

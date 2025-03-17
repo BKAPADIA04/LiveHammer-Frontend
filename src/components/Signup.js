@@ -11,7 +11,8 @@ export default function Signup() {
     const [otpSent, setOtpSent] = useState(false);
     const [loading, setLoading] = useState(false);
 
-    const host = 'http://localhost:8080';
+    // const host = 'http://localhost:8080';
+    const host = 'https://live-hammer-backend.vercel.app/';
 
     const handleGenerateOtp = async () => {
         if (!email) {
