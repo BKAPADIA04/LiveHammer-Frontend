@@ -7,10 +7,12 @@ export default function Payment() {
   const { email, payment } = location.state || {};
 
   const [stripePublishableKey, setStripePublishableKey] = useState('');
+  const host = 'https://live-hammer-backend.vercel.app';
 
   useEffect(() => {
     const getStripeCredentials = async () => {
-      const url = 'http://localhost:8080/payment/sendStripeCredentials';
+      const url = `${host}/payment/sendStripeCredentials`;
+      // const url = 'http://localhost:8080/payment/sendStripeCredentials';
       const response = await fetch(url, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -27,11 +29,17 @@ export default function Payment() {
     e.preventDefault();
     const stripe = await loadStripe(stripePublishableKey);
 
-    const response = await fetch('http://localhost:8080/payment/checkoutSession', {
+    const response = await fetch(`${host}/payment/checkoutSession`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ payment, email }),
+      body: JSON.stringify({ amount: payment }),
     });
+
+    // const response = await fetch('http://localhost:8080/payment/checkoutSession', {
+    //   method: 'POST',
+    //   headers: { 'Content-Type': 'application/json' },
+    //   body: JSON.stringify({ payment, email }),
+    // });
 
     const session = await response.json();
     const result = await stripe.redirectToCheckout({ sessionId: session.id });
