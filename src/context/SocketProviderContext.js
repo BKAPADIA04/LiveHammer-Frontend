@@ -9,7 +9,7 @@ export const useSocket = () => {
 
 export const SocketProvider = ({ children }) => {
     const socket = useMemo(() => 
-        io("https://live-hammer-backend.vercel.app", {
+        io("https://live-hammer-backend.vercel.app/socket.io/?EIO=4&transport=polling&t=645iytz1&sid=9FfZ312tHhwjoMSjAAAD", {
             transports: ["polling"],  // ✅ Force WebSocket (No polling)
             withCredentials: true,      // ✅ Allow cross-origin cookies if needed
             reconnection: true,         // ✅ Enable auto-reconnect
