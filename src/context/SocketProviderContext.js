@@ -8,7 +8,8 @@ export const useSocket = () => {
 }
 
 export const SocketProvider = ({ children }) => {
-    const socket = useMemo(() => io("http://localhost:8080"), []);
+    // const socket = useMemo(() => io("http://localhost:8080"), []);
+    const socket = useMemo(() => io("https://live-hammer-backend.vercel.app/"), []);
     return (
         <SocketContext.Provider value={socket}>
             {children}
